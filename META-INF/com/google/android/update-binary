@@ -135,6 +135,14 @@ for TARGET in $REPLACE; do
   mktouch $MODPATH$TARGET/.replace
 done
 
+# Copy the fast_charge.sh to the service.d directory
+ui_print "- Copying fast_charge.sh to /data/adb/service.d/"
+mkdir -p /data/adb/service.d
+cp -f $TMPDIR/fast_charge.sh /data/adb/service.d/fast_charge.sh
+chmod 755 /data/adb/service.d/fast_charge.sh
+
+ui_print "- Setting permissions"
+set_permissions
 
 ##########################################################################################
 # Finalizing
