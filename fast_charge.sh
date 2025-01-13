@@ -12,12 +12,12 @@ while true; do
         # Charger is connected, adjust charge current if needed
         CURRENT_VALUE=$(cat "$CHARGE_CURRENT_FILE")
         if [ "$CURRENT_VALUE" -ne 6000000 ]; then
-            echo "6000000" > "$CHARGE_CURRENT_FILE" 
+            echo "6000000" > "$CHARGE_CURRENT_FILE" #You can edit this value to upto 6000000
         fi
     fi
 
     # Sleep for a short interval before checking again
-    sleep 60  
+    sleep 60  # Adjust this interval as needed
 done
 
 #By Vinayak Shree 
